@@ -1,0 +1,52 @@
+.nav-back {
+    background-color: black;
+    min-height: 100vh; 
+    color: white; 
+}
+
+.nav-bg {
+    background-color: black; 
+    color: white; 
+}
+
+.nav-bg .nav-link {
+    color: white; 
+}
+
+.search-box {
+    background-color: black; 
+    color: whitesmoke; 
+    border-color: whitesmoke; 
+}
+
+.search-box .form-control {
+    background-color: rgb(133, 133, 133);
+    color: white;
+    border-color: rgb(133, 133, 133)
+}
+
+.search-box .form-control:focus {
+    background-color: rgb(180, 180, 180);
+    color: white;
+    border-color: rgb(100, 100, 100);
+    outline: none; 
+}
+
+.btn-dark {
+    background-color: black; 
+    border-color: red; 
+    color: red;
+}
+
+.btn-dark:hover {
+    background-color: darkred; 
+}
+
+.search-box {
+    display: flex; 
+    align-items: center; 
+}
+
+.nav-link {
+    margin-left: 5px; 
+  }
