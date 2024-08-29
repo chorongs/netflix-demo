@@ -1,24 +1,27 @@
-import logo from './logo.svg';
+import { Navbar } from 'react-bootstrap';
 import './App.css';
+import { Route, Routes } from 'react-router-dom';
+import AppLayout from './layout/AppLayout';
+
+
+// 홈페이지
+// 영화 전체 페이지
+// 영화 상세 페이지
+
+
+// 각각 폴더로 구분하는 이유는 style을 각각 관리하기 위해서.
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+
+
+
+    <Routes>
+      <Route path='/' element={<AppLayout/>}>  
+      {/* // 이렇게 하게되면 Route 사이에 들어가는 모든 요소들은 AppLayout을 적용받는다. */}
+      
+      </Route> 
+    </Routes>
   );
 }
 
