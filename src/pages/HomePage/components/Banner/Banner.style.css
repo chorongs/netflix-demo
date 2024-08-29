@@ -1,0 +1,30 @@
+.banner {
+    height: 56vh;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.banner:before {
+    content: '';
+    background:linear-gradient(to top, black, transparent);
+    position: absolute;
+    left: 0;
+    height: 56vh;
+    width: 100%;   
+}
+
+.banner-text-area {
+    width: 36%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    padding: 2rem;
+}
+
+.banner-text-area > * {
+    z-index: 2;
+}
+
+/* z-index를 하게 되면 우선순위를 줘서 내 글씨가 위로 올라오게 된다. 써봐야 알거 같다. */

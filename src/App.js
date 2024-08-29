@@ -6,6 +6,7 @@ import HomePage from './pages/HomePage/HomePage';
 import MoviePage from './pages/Movies/MoviePage';
 import MovieDetail from './pages/MovieDetail/MovieDetail';
 import NotFoundPage from './pages/NotFoundPage/NotFoundPage';
+import axios from 'axios';
 
 
 // 홈페이지  / 
@@ -33,5 +34,6 @@ function App() {
     </Routes>
   );
 }
+
 
 export default App;
