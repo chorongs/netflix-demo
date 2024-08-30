@@ -16,7 +16,7 @@ const MovieCard = ({movie}) => {
         <h1>{movie.title}</h1>
         {movie.genre_ids.map((id)=><Badge bg="danger">{id}</Badge>)}
 
-        <div className='vote-average'>⭐{movie.vote_average}</div>
+        <div className='vote-average'>⭐{movie.vote_average.toFixed(1)}</div>
         <div className='popularity'>📈{movie.popularity}</div>
         <div>{movie.adult?'🔞':'👶'}</div>
         </div>
