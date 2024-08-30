@@ -10,7 +10,7 @@ import { useUpcomingQuery } from '../../../../hooks/useUpcomingMovies';
 const responsive = {
     desktop: {
       breakpoint: { max: 3000, min: 1024 },
-      items: 6,
+      items: 5,
 
     },
     tablet: {
