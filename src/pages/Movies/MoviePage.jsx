@@ -2,7 +2,7 @@ import React from 'react'
 
 const MoviePage = () => {
   return (
-    <div>MoviePage</div>
+    <div>제발 나와줘 </div>
   )
 }
 
