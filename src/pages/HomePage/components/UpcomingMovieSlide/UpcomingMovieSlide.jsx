@@ -1,10 +1,11 @@
 import React from 'react'
-import { usePopularMovicesQuery } from '../../../../hooks/usePopularMovies'
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
 import { Alert } from 'bootstrap';
 import MovieCard from '../MovieCard/MovieCard';
-import "./PopularMovieSlide.style.css"
+import "./UpcomingMovieSlide.style.css"
+import { useUpcomingQuery } from '../../../../hooks/useUpcomingMovies';
+
 
 const responsive = {
     desktop: {
@@ -24,10 +25,10 @@ const responsive = {
     }
   };
 
-const PopularMovieSlide = () => {
+const UpcomingMovieSlide = () => {
 
 
-  const {data, isLoading, isError, error} = usePopularMovicesQuery()
+  const {data, isLoading, isError, error} = useUpcomingQuery()
 
   if (isLoading) {
     return <h1>Loading...</h1>
@@ -38,7 +39,7 @@ const PopularMovieSlide = () => {
 
   return (
     <div>
-        <h3>Popular Movies</h3>
+        <h3>Upcoming</h3>
 
 
   <Carousel
@@ -53,5 +54,4 @@ const PopularMovieSlide = () => {
     </div>
   )
 }
-
-export default PopularMovieSlide
+export default UpcomingMovieSlide

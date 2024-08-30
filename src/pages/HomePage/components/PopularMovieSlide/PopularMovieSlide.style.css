@@ -1,0 +1,9 @@
+.carousel-container {
+    overflow: hidden;
+    height:440px;
+}
+
+h3 {
+    margin-left: 20px; 
+    margin-bottom: 10px; 
+}

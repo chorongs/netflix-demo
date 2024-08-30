@@ -35,7 +35,7 @@ const AppLayout = () => {
           navbarScroll
         >
           <Nav.Link href="/">Home</Nav.Link>
-          <Nav.Link href="/movies">Link</Nav.Link>
+          <Nav.Link href="/movies">Movies</Nav.Link>
           
         </Nav>
         <Form className="search-box">
