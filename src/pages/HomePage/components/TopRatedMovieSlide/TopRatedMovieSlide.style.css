@@ -7,3 +7,14 @@ h3 {
     margin-left: 20px; 
     margin-bottom: 10px; 
 }
+
+@media (max-width: 768px) {
+    .carousel-container {
+        height: 300px; 
+    }
+
+    h3 {
+        margin-left: 10px; 
+        font-size: 1.2rem; 
+    }
+}

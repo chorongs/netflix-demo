@@ -28,3 +28,14 @@
 }
 
 /* z-index를 하게 되면 우선순위를 줘서 내 글씨가 위로 올라오게 된다. 써봐야 알거 같다. */
+
+@media (max-width: 768px) {
+    .banner {
+        height: 40vh;
+    }
+
+    .banner-text-area {
+        width: 80%; 
+        padding: 1rem; 
+    }
+}
