@@ -9,7 +9,7 @@
     background-size: cover;
     background-repeat: no-repeat;
     position: relative;
-    border-radius: 15px; 
+    border-radius: 5px; 
     overflow: hidden; 
 
     
@@ -44,8 +44,6 @@
   @media (max-width: 768px) {
     .banner {
       height: 40vh;
-      background-size: contain; 
-      background-position: center; 
     }
   
     .banner-text-area {
@@ -55,9 +53,9 @@
   }
   
   .banner-text-area h1 {
-    font-size: 2.5rem; 
+    font-size: 2rem; 
   }
   
   .banner-text-area p {
-    font-size: 1.2rem; 
+    font-size: 1rem; 
   }
