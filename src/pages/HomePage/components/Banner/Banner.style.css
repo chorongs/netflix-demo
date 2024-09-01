@@ -32,7 +32,7 @@
     flex-direction: column;
     justify-content: center;
     height: 100%;
-    padding: 2rem;
+    padding: 1rem;
     position: relative;
     z-index: 2;
   }
