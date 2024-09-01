@@ -52,3 +52,10 @@
     }
   }
   
+  .banner-text-area h1 {
+    font-size: 2.5rem; 
+  }
+  
+  .banner-text-area p {
+    font-size: 1.2rem; 
+  }
