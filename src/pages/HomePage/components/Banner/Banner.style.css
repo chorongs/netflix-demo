@@ -44,6 +44,8 @@
   @media (max-width: 768px) {
     .banner {
       height: 40vh;
+      background-size: contain; 
+      background-position: center; 
     }
   
     .banner-text-area {
