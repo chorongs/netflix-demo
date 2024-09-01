@@ -49,7 +49,7 @@ const TopRatedMovieSlide = () => {
     responsive={responsive}
 >
     {data.results.map((movie,index)=><MovieCard movie={movie} key={index}/>)}
-</Carousel>;
+</Carousel>
     </div>
   )
 }

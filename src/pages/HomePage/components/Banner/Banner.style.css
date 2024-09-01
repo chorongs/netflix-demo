@@ -1,41 +1,54 @@
-.banner {
-    height: 56vh;
+.banner-container {
+    width: 100%;
+    height : 65vh !important;
+  }
+  
+  .banner {
+    height: 65vh !important;
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
-}
+    position: relative;
+    border-radius: 15px; 
+    overflow: hidden; 
 
-.banner:before {
+    
+  }
+  
+
+  .banner:before {
     content: '';
-    background:linear-gradient(to top, black, transparent);
+    background: linear-gradient(to top, black, transparent);
     position: absolute;
     left: 0;
-    height: 56vh;
-    width: 100%;   
-}
-
-.banner-text-area {
+    height: 65vh !important;
+    width: 100%;
+    z-index: 1;
+  }
+  
+  .banner-text-area {
     width: 36%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     height: 100%;
     padding: 2rem;
-}
-
-.banner-text-area > * {
+    position: relative;
     z-index: 2;
-}
-
-/* z-index를 하게 되면 우선순위를 줘서 내 글씨가 위로 올라오게 된다. 써봐야 알거 같다. */
-
-@media (max-width: 768px) {
+  }
+  
+  .banner-text-area > * {
+    z-index: 2;
+  }
+  
+  @media (max-width: 768px) {
     .banner {
-        height: 40vh;
+      height: 40vh;
     }
-
+  
     .banner-text-area {
-        width: 80%; 
-        padding: 1rem; 
+      width: 80%; 
+      padding: 1rem; 
     }
-}
+  }
+  

@@ -1,35 +1,67 @@
-import React from 'react'
-import { usePopularMovicesQuery } from '../../../../hooks/usePopularMovies'
-import Alert from 'react-bootstrap/Alert';
-import "./Banner.style.css"
+import React from 'react';
+import { usePopularMovicesQuery } from '../../../../hooks/usePopularMovies';
+import Carousel from 'react-multi-carousel';
+import 'react-multi-carousel/lib/styles.css';
+import { Alert } from 'react-bootstrap';
+import './Banner.style.css';
+
+const responsive = {
+  desktop: {
+    breakpoint: { max: 3000, min: 1024 },
+    items: 1,
+  },
+  tablet: {
+    breakpoint: { max: 1024, min: 464 },
+    items: 1,
+  },
+  mobile: {
+    breakpoint: { max: 464, min: 0 },
+    items: 1,
+  },
+};
 
 const Banner = () => {
+  const { data, isLoading, isError, error } = usePopularMovicesQuery();
 
-
-const {data, isLoading, isError, error} = usePopularMovicesQuery()
-
-  console.log("ddd", data)
-  if(isLoading) {
-    return <h1>Loading...</h1>
+  if (isLoading) {
+    return <h1>Loading...</h1>;
   }
+
   if (isError) {
-    return <Alert variant='danger'>{error.message}</Alert>
+    return <Alert variant='danger'>{error.message}</Alert>;
   }
+
+  const topMovies = data.results.slice(0, 7);
 
   return (
-    <div style={{
-      backgroundImage: "url(" + 
-      `https://media.themoviedb.org/t/p/w533_and_h300_bestv2${data?.results[0].poster_path}` +
-       ")",
-    }}
-    className='banner'
-    >
-      <div className='text-white banner-text-area'>
-        <h1>{data?.results[0].title}</h1>
-        <p>{data?.results[0].overview}</p>
-      </div>
-      </div>
-  )
-}
+    <Carousel
+      infinite={true}
+      autoPlay={true}
+      autoPlaySpeed={3800} 
+      centerMode={false}
+      responsive={responsive}
+      showDots={false}
+      arrows={true} 
+      containerClass='banner-container'
+      itemClass='banner-item'
 
-export default Banner
+    >
+      {topMovies.map((movie, index) => (
+        <div
+          key={index}
+          style={{
+            backgroundImage: `url(https://media.themoviedb.org/t/p/w533_and_h300_bestv2${movie.poster_path})`,
+          }}
+          className='banner'
+        >
+          <div className='text-white banner-text-area'>
+            <h1>{movie.title}</h1>
+            <p>{movie.overview}</p>
+          </div>
+        </div>
+      ))}
+    </Carousel>
+  );
+};
+
+export default Banner;
