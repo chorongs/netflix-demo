@@ -40,6 +40,16 @@
   .banner-text-area > * {
     z-index: 2;
   }
+
+  .banner-text-area h1 {
+    font-size: 5rem; 
+    color: white;
+}
+
+.banner-text-area p {
+    font-size: 3rem; 
+    color: white; 
+}
   
   @media (max-width: 768px) {
     .banner {

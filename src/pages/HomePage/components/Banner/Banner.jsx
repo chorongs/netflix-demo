@@ -37,7 +37,7 @@ const Banner = () => {
     <Carousel
       infinite={true}
       autoPlay={true}
-      autoPlaySpeed={3800} 
+      autoPlaySpeed={5000} 
       centerMode={false}
       responsive={responsive}
       showDots={false}

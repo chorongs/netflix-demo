@@ -3,8 +3,8 @@ import { usePopularMovicesQuery } from '../../../../hooks/usePopularMovies'
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
 import { Alert } from 'bootstrap';
-import MovieCard from '../MovieCard/MovieCard';
 import "./PopularMovieSlide.style.css"
+import MovieCard from '../MovieCard/MovieCard';
 
 const responsive = {
     desktop: {
