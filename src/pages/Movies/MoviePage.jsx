@@ -4,7 +4,7 @@ import { useSearchParams } from 'react-router-dom'
 import { Alert, Col, Container, Row, Spinner } from 'react-bootstrap'
 import MovieCard from '../HomePage/components/MovieCard/MovieCard'
 import ReactPaginate from 'react-paginate';
-
+import './MoviePage.style.css';
 // 2가지 경로
 // nav바를 통해서 => popularMovie 보여주기
 // keyword를 검색해서 온 경우 => keyword와 관련된 영화들을 보여줌
@@ -27,7 +27,8 @@ const MoviePage = () => {
 
 
 
-  const totalPages = Math.min(data?.total_pages || 1, 12); 
+  const totalMovies = data?.total_results || 0;
+  const totalPages = Math.min(Math.ceil(totalMovies / 15), 12); 
 
 
 
@@ -58,13 +59,15 @@ const MoviePage = () => {
         </Col>
 
         {/* 영화카드 부분 */}
-        <Col lg={8} xa={12}>
+        <Col lg={8} xs={12}>
         <Row>
-        {data?.results.map((movie, index) =>( 
-        <Col key={index} lg={4} xa={12}>
+        {data?.results.slice(0, 15).map((movie, index) =>( 
+        <Col key={index} lg={4} md={4} xs={4} className='movie-card'>
         <MovieCard movie={movie} />
-        </Col>))}
+        </Col>
+      ))}
         </Row>
+
 
         {/* 페이지네이션 */}
         <ReactPaginate
