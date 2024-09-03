@@ -1,20 +1,31 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Button from 'react-bootstrap/Button';
 import Container from 'react-bootstrap/Container';
 import Form from 'react-bootstrap/Form';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { Outlet } from 'react-router-dom';
+import { Outlet, useNavigate } from 'react-router-dom';
 import './AppLayout.style.css';
 
 
 const AppLayout = () => {
+
+  const [keyword, setKeyword] = useState('');
+  const navigate = useNavigate() 
+
+  const searchByKeyword=(event) => {
+    event.preventDefault()
+    // url을 바꿔줘야한다.
+    navigate(`/movies?q=${keyword}`)
+    setKeyword("")
+  }
+
   return (
     <div className='nav-back'>
     <Navbar expand="lg" className="nav-bg">
     <Container fluid>
-    <Navbar.Brand href="#" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+    <Navbar.Brand href="/" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
       <img
               src="https://cdn.dribbble.com/users/9378043/screenshots/16832559/media/10b207c918d604662e088308d16b366d.png?resize=1600x1200&vertical=center"
               alt="Netflix Logo"
@@ -38,14 +49,16 @@ const AppLayout = () => {
           <Nav.Link href="/movies">Movies</Nav.Link>
           
         </Nav>
-        <Form className="search-box">
+        <Form className="search-box" onSubmit={searchByKeyword}>
           <Form.Control
             type="search"
             placeholder="Search"
             className="me-2"
             aria-label="Search"
+            value = {keyword}
+            onChange={(event) => setKeyword(event.target.value)} // 내부 변화가 생길때마다 키워드를 세팅 e.t.v 세트임
           />
-          <Button variant="dark">Search</Button>
+          <Button variant="dark" type='submit'>Search</Button>
         </Form>
       </Navbar.Collapse>
     </Container>
