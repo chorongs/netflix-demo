@@ -58,7 +58,7 @@ h1 {
         width: 150px;  
         height: 225px; 
         transform: scale(1); 
-        overflow: hidden; 
+        overflow: visible; 
     }
 
     .overlay {

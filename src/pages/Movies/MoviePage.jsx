@@ -61,8 +61,8 @@ const MoviePage = () => {
         {/* 영화카드 부분 */}
         <Col lg={8} xs={12}>
         <Row>
-        {data?.results.slice(0, 15).map((movie, index) =>( 
-        <Col key={index} lg={4} md={4} xs={4} className='movie-card'>
+        {data?.results.slice(0, 16).map((movie, index) =>( 
+        <Col key={index} lg={4} md={4} xs={6} className='movie-card g-0'>
         <MovieCard movie={movie} />
         </Col>
       ))}
