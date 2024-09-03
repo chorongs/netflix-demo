@@ -50,7 +50,7 @@ const Banner = () => {
         <div
           key={index}
           style={{
-            backgroundImage: `url(https://media.themoviedb.org/t/p/w533_and_h300_bestv2${movie.poster_path})`,
+            backgroundImage:  `url(https://image.tmdb.org/t/p/original${movie.backdrop_path})`,
           }}
           className='banner'
         >
