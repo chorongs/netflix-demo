@@ -58,21 +58,32 @@ h1 {
         width: 150px;  
         height: 225px; 
         transform: scale(1); 
-        /* 추가 */
         overflow: hidden; 
-        text-overflow: ellipsis;
-        white-space: nowrap; 
     }
 
     .overlay {
-        padding: 2px; 
+        padding: 5px; 
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
     }
 
     h1 {
         font-size: 1rem;
+        overflow: hidden; 
+        text-overflow: ellipsis; 
+        white-space: nowrap; 
+        max-width: 100%; 
     }
 
-    .badge, .vote-average, .popularity {
-        font-size: 0.5rem;
+    .badge {
+        font-size: 0.6rem; 
+        margin: 2px; 
+    }
+
+    .vote-average, .popularity {
+        font-size: 0.6rem; 
     }
 }
