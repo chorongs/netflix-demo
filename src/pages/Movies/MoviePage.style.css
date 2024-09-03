@@ -26,10 +26,8 @@
     color: red; 
   }
 
-  .movie-card {
-    margin: 10px 10px;
-    
-  }
+
+  
   
   @media (max-width: 768px) {
     .page-link {
@@ -47,36 +45,5 @@
   
     .page-link {
       font-size: 14px; 
-    }
-
-    .movie-card {
-      display: flex; 
-      flex-direction: column; 
-      justify-content: center; 
-      align-items: center; 
-      margin: 5px; 
-      padding: 5px;
-      overflow: hidden;
-    }
-  }
-
-  @media (max-width: 1200px) {
-    .pagination {
-      font-size: 12px; 
-    }
-    .movie-card {
-      margin: 5px; 
-      padding: 5px;
-    }
-  }
-
-  @media (max-width: 576px) {
-    .pagination {
-      font-size: 8px; 
-    }
-
-    .movie-card {
-      margin: 5px; 
-      padding: 5px;
     }
   }
