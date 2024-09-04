@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useSearchMovieQuery } from '../../hooks/useSearchMovie'
 import { useSearchParams } from 'react-router-dom'
 import { Alert, Col, Container, Row, Spinner } from 'react-bootstrap'
@@ -30,7 +30,17 @@ const MoviePage = () => {
   const totalMovies = data?.total_results || 0;
   const totalPages = Math.min(Math.ceil(totalMovies / 15), 12); 
 
+  useEffect(() => {
+    if (!keyword) {
+      setPage(1);
+      setQuery({}) // 쿼리 파라미터 초기화 하는 거
+    }
+  }, [keyword, setQuery]);
 
+  useEffect(() => {
+    // 페이지가 변경될 때마다 쿼리 파라미터를 업데이트해주는 함수
+    setQuery({ q: keyword || '', page }); // 현재 키워드와 페이지로 업데이트를 해줌
+  }, [page, keyword, setQuery]);
 
   if (isLoading) {
     return (
@@ -61,11 +71,15 @@ const MoviePage = () => {
         {/* 영화카드 부분 */}
         <Col lg={8} xs={12}>
         <Row>
-        {data?.results.slice(0, 16).map((movie, index) =>( 
-        <Col key={index} lg={4} md={4} xs={6} className='movie-card g-0'>
-        <MovieCard movie={movie} />
-        </Col>
-      ))}
+        {totalMovies === 0 ? (
+              <Alert variant='info'>검색 결과가 없습니다.</Alert>
+            ) : (
+              data?.results.slice(0, 16).map((movie, index) => (
+                <Col key={index} lg={4} md={4} xs={6} className='movie-card g-0'>
+                  <MovieCard movie={movie} />
+                </Col>
+              ))
+            )}
         </Row>
 
 
