@@ -7,7 +7,7 @@ import Navbar from 'react-bootstrap/Navbar';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Outlet, useNavigate } from 'react-router-dom';
 import './AppLayout.style.css';
-
+import Mainlogo from '../asset/logo/MainLogo.png'
 
 const AppLayout = () => {
 
@@ -27,8 +27,8 @@ const AppLayout = () => {
     <Container fluid>
     <Navbar.Brand href="/" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
       <img
-              src="https://cdn.dribbble.com/users/9378043/screenshots/16832559/media/10b207c918d604662e088308d16b366d.png?resize=1600x1200&vertical=center"
-              alt="Netflix Logo"
+              src={Mainlogo}
+              alt="FilmIllumination"
               width="135"
               height="75"
               className="d-inline-block align-top"

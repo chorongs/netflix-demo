@@ -63,7 +63,7 @@ const MoviePage = () => {
         <Col lg={4} xs={12}> 
         {" "}
         </Col>
-
+      
         {/* 영화카드 부분 */}
         <Col lg={8} xs={12}>
         <Row>
