@@ -27,6 +27,17 @@
   }
 
 
+  .spinner-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* 화면 전체 높이 */
+  }
+  
+  .spinner {
+    width: 3rem; /* 스피너 너비 조정 */
+    height: 3rem; /* 스피너 높이 조정 */
+  }
   
   
   @media (max-width: 768px) {

@@ -2,8 +2,9 @@ import React from 'react';
 import { usePopularMovicesQuery } from '../../../../hooks/usePopularMovies';
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
-import { Alert } from 'react-bootstrap';
+import { Alert, Spinner } from 'react-bootstrap';
 import './Banner.style.css';
+import  loading from '../asset/loading.gif'
 
 const responsive = {
   desktop: {
@@ -24,7 +25,11 @@ const Banner = () => {
   const { data, isLoading, isError, error } = usePopularMovicesQuery();
 
   if (isLoading) {
-    return <h1>Loading...</h1>;
+    return (
+      <div className="spinner-container">
+        <Spinner className="spinner" animation="border" variant="danger" />
+      </div>
+    );
   }
 
   if (isError) {

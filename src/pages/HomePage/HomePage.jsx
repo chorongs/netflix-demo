@@ -10,6 +10,8 @@ import UpcomingMovieSlide from './components/UpcomingMovieSlide/UpcomingMovieSli
 // 3. 높은 선택률 영화
 // 4. 뜨는 영화
 
+
+
 const HomePage = () => {
   return (
     <div>

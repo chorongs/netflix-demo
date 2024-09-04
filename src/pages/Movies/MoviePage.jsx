@@ -44,14 +44,10 @@ const MoviePage = () => {
 
   if (isLoading) {
     return (
-    <div className='spinner-area'>
-      <Spinner
-      animation='border'
-      variant='danger'
-      style={{ width: "5rem", height: "5rem"}}
-      />
-    </div>
-    )
+      <div className="spinner-container">
+        <Spinner className="spinner" animation="border" variant="danger" />
+      </div>
+    );
   }
 
   if (isError) {
