@@ -4,7 +4,7 @@ import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
 import { Alert, Spinner } from 'react-bootstrap';
 import './Banner.style.css';
-import  loading from '../asset/loading.gif'
+
 
 const responsive = {
   desktop: {

@@ -71,7 +71,7 @@ const MoviePage = () => {
               <Alert variant='info'>검색 결과가 없습니다.</Alert>
             ) : (
               data?.results.slice(0, 16).map((movie, index) => (
-                <Col key={index} lg={4} md={4} xs={6} className='movie-card g-0'>
+                <Col key={index} lg={4} md={4} xs={6} >
                   <MovieCard movie={movie} />
                 </Col>
               ))
