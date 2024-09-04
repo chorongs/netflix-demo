@@ -38,7 +38,7 @@ const TopRatedMovieSlide = () => {
 
   return (
     <div>
-        <h3>Top Rated</h3>
+        <h3>높은 평점의 영화</h3>
 
 
   <Carousel

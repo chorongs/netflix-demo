@@ -38,7 +38,7 @@ const PopularMovieSlide = () => {
 
   return (
     <div>
-        <h3>Popular Movies</h3>
+        <h3>인기 영화</h3>
 
 
   <Carousel

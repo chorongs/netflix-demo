@@ -39,7 +39,7 @@ const UpcomingMovieSlide = () => {
 
   return (
     <div>
-        <h3>Upcoming</h3>
+        <h3>개봉 예정 영화</h3>
 
 
   <Carousel
@@ -50,7 +50,7 @@ const UpcomingMovieSlide = () => {
     responsive={responsive}
 >
     {data.results.map((movie,index)=><MovieCard movie={movie} key={index}/>)}
-</Carousel>;
+</Carousel>
     </div>
   )
 }
