@@ -10,20 +10,20 @@
   }
   
   .page-link {
-    color: red; 
-    background-color: transparent; 
-    border: 1px solid red; 
+    color: rgb(129, 107, 255);
+    background-color: black;
+    border: 1px solid rgb(129, 107, 255); 
     padding: 8px 12px;
     border-radius: 4px; 
   }
   
   .page-link:hover {
-    background-color: rgba(255, 0, 0, 0.1); 
+    background-color: rgb(129, 107, 255);
   }
   
   .active .page-link {
     background-color: black; 
-    color: red; 
+    color: rgb(129, 107, 255); 
   }
 
 
