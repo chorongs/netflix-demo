@@ -2,12 +2,13 @@ import React from 'react'
 import { Badge } from 'react-bootstrap'
 import './MovieCard.style.css';
 import { useMovieGenreQuery } from '../../../../hooks/useMovieGenre';
-import MovieDetail from '../../../MovieDetail/MovieDetail';
+import { useNavigate } from 'react-router-dom';
 
 const MovieCard = ({movie}) => {
 
-    const {data:genreData} = useMovieGenreQuery()
+    const navigate = useNavigate();
 
+    const {data:genreData} = useMovieGenreQuery()
     const showGenre = (genreIdList) => {
         if(!genreData) return []
         const genreNameList = genreIdList.map((id) => {
@@ -17,6 +18,11 @@ const MovieCard = ({movie}) => {
 
         return genreNameList
     }
+
+    const goToDetail = (id) => {
+        navigate(`/movies/${movie.id}`);
+    }
+
   return (
     <div
     style={{backgroundImage:
@@ -25,8 +31,10 @@ const MovieCard = ({movie}) => {
         ")",
      }}
      className='movie-card'
+     onClick={() => goToDetail(movie.id)}
+    
     >
-        <div className='overlay' onClick={MovieDetail}>
+        <div className='overlay' >
         <h1>{movie.title}</h1>
         <div className='badges'>
         {showGenre(movie.genre_ids).map((genre, index) => (
@@ -38,6 +46,7 @@ const MovieCard = ({movie}) => {
         <div className='popularity'>📅{movie.release_date}</div>
         <div className='vote-average'>⭐{movie.vote_average.toFixed(1)}</div>
         <div>{movie.adult?'🔞':'👶'}</div>
+        
         </div>
     </div>
 )
