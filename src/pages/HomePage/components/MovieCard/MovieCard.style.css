@@ -87,3 +87,8 @@ h1 {
         font-size: 0.6rem; 
     }
 }
+
+.badge {
+    background-color: rgb(129, 107, 255) !important;
+    color: white; 
+}

@@ -2,6 +2,7 @@ import React from 'react'
 import { Badge } from 'react-bootstrap'
 import './MovieCard.style.css';
 import { useMovieGenreQuery } from '../../../../hooks/useMovieGenre';
+import MovieDetail from '../../../MovieDetail/MovieDetail';
 
 const MovieCard = ({movie}) => {
 
@@ -25,11 +26,11 @@ const MovieCard = ({movie}) => {
      }}
      className='movie-card'
     >
-        <div className='overlay'>
+        <div className='overlay' onClick={MovieDetail}>
         <h1>{movie.title}</h1>
         <div className='badges'>
         {showGenre(movie.genre_ids).map((genre, index) => (
-        <Badge className='badge' bg="danger" key={index}>
+        <Badge className='badge' key={index}>
             {genre}
             </Badge>
         ))}
