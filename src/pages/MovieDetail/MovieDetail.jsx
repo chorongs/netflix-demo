@@ -31,7 +31,7 @@ const MovieDetail = () => {
               style={{backgroundImage:
                 "url(" + 
                 `https://image.tmdb.org/t/p/w1920_and_h800_multi_faces${data.backdrop_path}` + 
-                ")",  backgroundRepeat: 'no-repeat', }
+                ")",  backgroundRepeat: 'no-repeat', backgroundSize: 'cover' }
               
               }
           >
@@ -40,12 +40,13 @@ const MovieDetail = () => {
             <div className='movie-contents'>
 
             <div className='movie-info'>
-            <h1 className="movie-title">{data.title}</h1>
-              <p className="movie-release-date">개봉일: {data.release_date}</p>
-              <p className="movie-runtime">상영시간: {data.runtime}분</p>
-              <p className="movie-rating">평점: {data.vote_average.toFixed(1)}</p>
-              <p className="movie-overview">{data.overview}</p>
-              <p className="movie-adult">연령제한: {data.adult ? '18+' : '전체 관람가'}</p>
+            <h1 className="movie-title" >{data.title}</h1>
+              <p id='info'>개봉일 : {data.release_date}</p>
+              <p id='info'>상영시간 : {data.runtime}분</p>
+              <p id='info'>평점 : {data.vote_average.toFixed(1)}</p>
+              <p id='info'>연령제한 : {data.adult ? '18+' : '전체 관람가'}</p>
+              <p className='overview'>{data.overview}</p>
+              
             </div>
 
 

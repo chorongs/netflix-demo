@@ -66,10 +66,11 @@
   @media (max-width: 768px) {
     .banner {
       height: 40vh;
+      padding: 0;
     }
   
     .banner-text-area {
-      width: 80%; 
+      width: 90%; 
       padding: 1rem; 
     }
   }
