@@ -19,11 +19,11 @@ const MovieCard = ({movie}) => {
         return genreNameList
     }
 
-    const goToDetail = (id) => {
+    const goToDetail = () => {
         navigate(`/movies/${movie.id}`);
     }
 
-  return (
+     return (
     <div
     style={{backgroundImage:
         "url(" + 
