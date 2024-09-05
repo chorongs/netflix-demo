@@ -1,4 +1,4 @@
-import { Navbar } from 'react-bootstrap';
+
 import './App.css';
 import { Route, Routes } from 'react-router-dom';
 import AppLayout from './layout/AppLayout';
@@ -6,7 +6,6 @@ import HomePage from './pages/HomePage/HomePage';
 import MoviePage from './pages/Movies/MoviePage';
 import MovieDetail from './pages/MovieDetail/MovieDetail';
 import NotFoundPage from './pages/NotFoundPage/NotFoundPage';
-import axios from 'axios';
 
 
 // 홈페이지  / 
