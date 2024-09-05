@@ -32,7 +32,7 @@ const AppLayout = () => {
               width="135"
               height="75"
               className="d-inline-block align-top"
-              style={{ backgroundColor: 'transparent', border: 'none', display: 'block', marginRight:'20px' }}
+              style={{ backgroundColor: 'transparent', border: 'none', display: 'block', marginRight:'20px', marginLeft:'10px' }}
             />
         {' '}
         </Navbar.Brand>

@@ -68,7 +68,19 @@ const MoviePage = () => {
         <Col lg={8} xs={12}>
         <Row>
         {totalMovies === 0 ? (
-              <Alert variant='info'>검색 결과가 없습니다.</Alert>
+              <div className="alert-container">
+              <Alert variant='info' style={{ 
+                backgroundColor: 'rgb(129, 107, 255)', 
+                color: 'white', 
+                border: 'none',  
+                width: '80%',
+                fontSize: '1.3rem',
+                textAlign: 'center',
+                marginTop: '100px',
+                }}>
+                  검색 결과가 없습니다.
+              </Alert>
+          </div>
             ) : (
               data?.results.slice(0, 16).map((movie, index) => (
                 <Col key={index} lg={4} md={4} xs={6} >

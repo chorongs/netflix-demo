@@ -20,26 +20,26 @@
 }
 
 .search-box .form-control {
-    background-color: rgb(133, 133, 133);
-    color: white;
-    border-color: rgb(133, 133, 133)
+    background-color: white(133, 133, 133);
+    color: black;
+    border-color: rgb(133, 133, 133, 0.5)
 }
 
 .search-box .form-control:focus {
     background-color: rgb(180, 180, 180);
-    color: white;
-    border-color: rgb(100, 100, 100);
+    color: black;
+    border-color: rgb(100, 100, 100, 0.5);
     outline: none; 
 }
 
 .btn-dark {
     background-color: black; 
-    border-color: red; 
-    color: red;
+    border-color: rgb(129, 107, 255);; 
+    color: rgb(129, 107, 255);;
 }
 
 .btn-dark:hover {
-    background-color: darkred; 
+    background-color: rgb(129, 107, 255);
 }
 
 .search-box {
@@ -53,10 +53,10 @@
 
 
   .navbar-toggler {
-    background-color: red; 
-    border-color: red; 
+    background-color: rgb(129, 107, 255); 
+    border-color: rgb(129, 107, 255); 
 }
 
 .navbar-toggler:hover {
-    background-color: darkred;
+    background-color: rgb(129, 107, 255);
 }
