@@ -45,7 +45,7 @@ const MovieCard = ({movie}) => {
         </div>
         <div className='popularity'>📅{movie.release_date}</div>
         <div className='vote-average'>⭐{movie.vote_average.toFixed(1)}</div>
-        <div>{movie.adult?'Adult':'All'}</div>
+        <div>{movie.adult?'18+':'All'}</div>
         
         </div>
     </div>
