@@ -97,7 +97,7 @@ const MoviePage = () => {
           <Col lg={4} xs={12}>
             <Dropdown onSelect={handleSortChange}>
               <Dropdown.Toggle variant="secondary" id="dropdown-basic">
-                인기 순으로 보기
+                인기 순
               </Dropdown.Toggle>
 
               <Dropdown.Menu>
@@ -108,7 +108,7 @@ const MoviePage = () => {
 
             <Dropdown style={{ marginTop: '20px' }} onSelect={handleGenreSelect}>
               <Dropdown.Toggle variant="secondary" id="dropdown-basic">
-                장르 별 보기
+                장르 별
               </Dropdown.Toggle>
 
               <Dropdown.Menu>
@@ -144,8 +144,8 @@ const MoviePage = () => {
               </Alert>
             </div>
           ) : (
-            sortedAndFilteredMovies.slice(0, 16).map((movie, index) => (
-              <Col key={index} lg={4} md={4} xs={6}>
+            sortedAndFilteredMovies.slice(0, 24).map((movie, index) => (
+              <Col key={index} lg={3} md={3} xs={3}>
                 <MovieCard movie={movie} />
               </Col>
             ))

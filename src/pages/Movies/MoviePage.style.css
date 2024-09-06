@@ -10,6 +10,8 @@
 /* 필터링 및 정렬 부분 */
 .filters-container {
   margin-bottom: 20px; 
+  display: flex;
+  justify-content: flex-end;
 }
 
 .filters-container .dropdown {
