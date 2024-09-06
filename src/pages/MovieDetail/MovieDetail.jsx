@@ -4,6 +4,7 @@ import { Spinner, Alert, Container, Row, Col, Tabs, Tab } from 'react-bootstrap'
 import useMovieDetailQuery from '../../hooks/useMovieDetail';
 import './MovieDetail.style.css'
 import useMovieReviewQuery from '../../hooks/useMovieReview';
+import RecommandTap from './components/RecommandTap/RecommandTap';
 
 const MovieDetail = () => {
   const { id } = useParams(); // URL에서 영화 ID를 가져옴
@@ -99,7 +100,10 @@ const MovieDetail = () => {
 
           <Tab eventKey="recommendations" title="추천">
             <p>여기에 추천 콘텐츠가 표시됩니다.</p>
-            {/* 추천 콘텐츠 데이터를 불러와서 표시할 수 있습니다. */}
+            <div>
+              <RecommandTap />
+            </div>
+
           </Tab>
         </Tabs>
       </Container>
