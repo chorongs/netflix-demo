@@ -18,6 +18,8 @@ const MovieDetail = () => {
     const [isExpanded, setIsExpanded] = useState(false);
     const maxLength = 200;
 
+
+
     const toggleReadMore = () => {
       setIsExpanded(!isExpanded);
     };
@@ -69,6 +71,7 @@ const MovieDetail = () => {
             <p id="info">상영시간 | ⏰{data.runtime}분</p>
             <p id="info">평점 | ⭐{data.vote_average.toFixed(1)}</p>
             <p id="info">연령제한 | {data.adult ? '18+' : '전체 관람가'}</p>
+            <p id="info">장르 | {data.genres.map(genre => genre.name).join(', ')}</p>
             <p className="overview">{data.overview}</p>
           </div>
 
