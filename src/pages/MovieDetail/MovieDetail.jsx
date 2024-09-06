@@ -3,27 +3,33 @@ import { useParams } from 'react-router-dom';
 import { Spinner, Alert, Container, Row, Col } from 'react-bootstrap';
 import useMovieDetailQuery from '../../hooks/useMovieDetail';
 import './MovieDetail.style.css'
+import useMovieReviewQuery from '../../hooks/useMovieReview';
 
 const MovieDetail = () => {
   const { id } = useParams(); // URL에서 영화 ID를 가져옴
   const { data, isLoading, isError, error } = useMovieDetailQuery({ id });
+  const { data: reviews, isLoading: isReviewsLoading, isError: isReviewsError, error: reviewsError } = useMovieReviewQuery(id);
 
-  // 로딩 중일 때 스피너 표시
-  if (isLoading) {
+
+  if (isLoading || isReviewsLoading) {
     return <Spinner animation="border" />;
   }
 
-  // 에러가 발생하면 에러 메시지 표시
+
   if (isError) {
     return <Alert variant="danger">{error.message}</Alert>;
   }
 
-  // 데이터가 없을 때 처리
+  if (isReviewsError) {
+    return <Alert variant="danger">{reviewsError.message}</Alert>;
+  }
+
+
   if (!data) {
     return <div>No movie data available</div>;
   }
 
-  // 데이터를 정상적으로 불러왔을 때 화면에 표시
+
   return (
         <div className='movie-container'>
           
@@ -62,7 +68,16 @@ const MovieDetail = () => {
 
           <div>
             <h1>리뷰박스 자리</h1>
-
+            {reviews && reviews.results.length > 0 ? (
+             reviews.results.map(review => (
+            <div key={review.id} className="review-box">
+              <h5>{review.author}</h5>
+              <p>{review.content}</p>
+            </div>
+          ))
+        ) : (
+          <p>No reviews available</p>
+        )}  
           </div>
         </div>
   );
