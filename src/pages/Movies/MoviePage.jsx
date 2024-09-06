@@ -56,7 +56,7 @@ const MoviePage = () => {
     return movies.filter((movie) => movie.genre_ids.includes(selectedGenre));
   };
 
-  const sortedAndFilteredMovies = filterByGenre(sortMovies(data.results));
+  const sortedAndFilteredMovies = filterByGenre(sortMovies(data?.results || []));
 
   const handleSortChange = (eventKey) => {
     setSortOrder(eventKey);
@@ -94,22 +94,21 @@ const MoviePage = () => {
       <Row>
         {/* 필터링 및 정렬 부분 */}
         <Col lg={4} xs={12}>
-          <p>영화 필터</p>
 
           <Dropdown onSelect={handleSortChange}>
             <Dropdown.Toggle variant="secondary" id="dropdown-basic">
-              인기별로 보기
+              인기 순으로 보기
             </Dropdown.Toggle>
 
             <Dropdown.Menu>
-              <Dropdown.Item eventKey="desc">평점이 높은</Dropdown.Item>
-              <Dropdown.Item eventKey="asc">평점이 낮은</Dropdown.Item>
+              <Dropdown.Item eventKey="desc">평점 높은 순</Dropdown.Item>
+              <Dropdown.Item eventKey="asc">평점 낮은 순</Dropdown.Item>
             </Dropdown.Menu>
           </Dropdown>
 
           <Dropdown style={{ marginTop: '20px' }} onSelect={handleGenreSelect}>
             <Dropdown.Toggle variant="secondary" id="dropdown-basic">
-              Filter by Genre
+              장르 별 보기
             </Dropdown.Toggle>
 
             <Dropdown.Menu>
