@@ -6,6 +6,7 @@ import HomePage from './pages/HomePage/HomePage';
 import MoviePage from './pages/Movies/MoviePage';
 import MovieDetail from './pages/MovieDetail/MovieDetail';
 import NotFoundPage from './pages/NotFoundPage/NotFoundPage';
+import Footer from './pages/HomePage/components/Footer/Footer';
 
 
 // 홈페이지  / 

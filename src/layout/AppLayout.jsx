@@ -8,6 +8,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { Outlet, useNavigate } from 'react-router-dom';
 import './AppLayout.style.css';
 import Mainlogo from '../asset/logo/MainLogo.png'
+import Footer from '../pages/HomePage/components/Footer/Footer';
 
 const AppLayout = () => {
 
@@ -65,6 +66,8 @@ const AppLayout = () => {
   </Navbar>
     <Outlet />
     {/*  // 리액트에 새로나운 기술인데 router내부 자손을 가져올 수 있도록 도와준다. */}
+
+    <Footer />
     </div>
 
 

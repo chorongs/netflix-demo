@@ -1,0 +1,27 @@
+.footer {
+    background-color: rgb(129, 107, 255); /* 배경색 */
+    color: #fff; /* 글자색 */
+    padding: 40px;
+    text-align: center;
+  }
+  
+  .footer-content,
+  .footer-address,
+  .footer-copy {
+    margin: 5px 0;
+  }
+  
+  .footer-content {
+    font-size: 20px; 
+    font-weight: bold;
+  }
+  
+  .footer-address {
+    font-size: 16px; 
+    font-weight: bold;
+  }
+  
+  .footer-copy {
+    font-size: 14px; 
+    font-weight: bold;
+  }
