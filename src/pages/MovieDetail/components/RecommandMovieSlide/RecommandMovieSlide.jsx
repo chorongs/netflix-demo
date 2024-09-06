@@ -3,7 +3,7 @@ import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
 import { Alert } from 'bootstrap';
 import './RecommandMovieSlide.style.css'
-import useRecommandMovieQuery from '../../../../hooks/movieRecommandMovie';
+import useRecommandMovieQuery from '../../../../hooks/useRecommandMovie';
 import MovieCard from '../../../HomePage/components/MovieCard/MovieCard';
 import { useParams } from 'react-router-dom';
 
@@ -27,7 +27,7 @@ const responsive = {
     }
   };
 
-const RecommendMovieSlide = () => {
+const RecommandMovieSlide = () => {
 
   const {id} = useParams();
   const {data, isLoading, isError, error} = useRecommandMovieQuery(id)
@@ -50,12 +50,12 @@ const RecommendMovieSlide = () => {
     containerClass='carousel-container'
     responsive={responsive}
 >
-    {data.results.map((movie,index)=> (
+    {data.results.map((movie,index)=> 
     <MovieCard movie={movie} key={index}/>
-    ))}
+    )}
     </Carousel>
     </div>
   )
 }
 
-export default RecommendMovieSlide
+export default RecommandMovieSlide

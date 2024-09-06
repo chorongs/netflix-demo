@@ -99,7 +99,6 @@ const MovieDetail = () => {
           </Tab>
 
           <Tab eventKey="recommendations" title="추천">
-            <p>여기에 추천 콘텐츠가 표시됩니다.</p>
             <div>
               <RecommandTap />
             </div>

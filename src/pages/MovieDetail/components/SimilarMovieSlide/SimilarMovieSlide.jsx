@@ -42,16 +42,16 @@ const SimilarMovieSlide = () => {
         <h3>비슷한 취향의 영화</h3>
 
 
-        <Carousel
+    <Carousel
     infinite={true}
     centerMode={true}
     itemClass='movie-slider p-1'
     containerClass='carousel-container'
     responsive={responsive}
 >
-    {data.results.map((movie,index)=> (
+    {data.results.map((movie,index)=> 
     <MovieCard movie={movie} key={index}/>
-    ))}
+    )}
     </Carousel>
     </div>
   )
