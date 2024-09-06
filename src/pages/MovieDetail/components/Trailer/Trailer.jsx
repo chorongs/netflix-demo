@@ -1,6 +1,6 @@
 import React from 'react';
 import { useMovieTrailerQuery } from '../../../../hooks/useMovieTrailer';
-
+import './Trailer.style.css';
 
 const Trailer = ({ movieId }) => {
   const { data , error, isLoading } = useMovieTrailerQuery(movieId);
@@ -18,8 +18,8 @@ const Trailer = ({ movieId }) => {
   }
 
   return (
-    <div>
-      <h2></h2>
+    <div className='trailer-container'>
+       <div className="trailer-video">
       <iframe
         width="560"
         height="315"
@@ -28,6 +28,7 @@ const Trailer = ({ movieId }) => {
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowFullScreen
       ></iframe>
+      </div>
     </div>
   );
 };
