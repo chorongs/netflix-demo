@@ -1,9 +1,9 @@
+/* 영화 상세 박스 */
 .movie-container {
     width : 100%;
     display: flex;
     flex-direction: column;
 }
-
 
 .movie-box {
     display: flex;
@@ -66,6 +66,42 @@
     font-size: 1.2rem;
     margin-bottom: 20px;
 }
+
+/* 리뷰 */
+
+.review-box button {
+    border: none; /* 테두리 제거 */
+    color: rgb(129, 107, 255); /* 글자 색상 변경 */
+    background: none; /* 배경 제거 */
+    cursor: pointer; /* 커서 변경 */
+    padding: 0; /* 패딩 제거 */
+    
+  }
+
+  .review-box {
+    width: 90%;
+    max-width: 1300px;
+    margin: 20px auto;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    background-color: black;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  }
+
+  .review-name {
+    font-size: large;
+    font-weight: bold;
+    margin: 40px auto;
+    text-align: center;
+    border: none;
+    background-color: rgb(129, 107, 255);
+    width: 90%;
+    max-width: 1300px;
+    padding: 20px;
+    border-radius: 10px;
+    
+  }
 
 @media (max-width : 768px){
     .movie-container {
