@@ -5,13 +5,14 @@ import useMovieDetailQuery from '../../hooks/useMovieDetail';
 import './MovieDetail.style.css'
 import useMovieReviewQuery from '../../hooks/useMovieReview';
 import RecommandTap from './components/RecommandTap/RecommandTap';
+import Trailer from './components/Trailer/Trailer';
 
 const MovieDetail = () => {
   const { id } = useParams(); // URL에서 영화 ID를 가져옴
   const { data, isLoading, isError, error } = useMovieDetailQuery({ id });
   const { data: reviews, isLoading: isReviewsLoading, isError: isReviewsError, error: reviewsError } = useMovieReviewQuery(id);
   
-  // 트레일러와 추천 콘텐츠에 대한 추가 커스텀 훅을 구현할 수도 있습니다.
+
 
   const Review = ({ review }) => {
     const [isExpanded, setIsExpanded] = useState(false);
@@ -48,7 +49,7 @@ const MovieDetail = () => {
   }
 
   if (!data) {
-    return <div>No movie data available</div>;
+    return <div>데이터가 없습니다.</div>;
   }
 
   return (
@@ -94,8 +95,8 @@ const MovieDetail = () => {
           </Tab>
 
           <Tab eventKey="trailers" title="예고편">
-            <p>여기에 예고편이 표시됩니다.</p>
-            {/* 예고편 데이터를 불러와서 표시할 수 있습니다. */}
+              <Trailer movieId={data.id}/>
+            
           </Tab>
 
           <Tab eventKey="recommendations" title="추천">

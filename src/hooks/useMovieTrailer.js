@@ -1,25 +1,14 @@
 import { useQuery } from '@tanstack/react-query';
 import api from '../utils/api';
 
-
-const fetchMovieTrailer = async ({ queryKey }) => {
-    const [_, movieId] = queryKey;
-    const response = await api.get(
-        `https://api.themoviedb.org/3/movie/${movieId}/videos?language=ko-KR`
-    );
-
-    const trailers = response.data.results.filter(
-        video => video.type === 'Trailer' && video.site === 'YouTube'
-    );
-
-    return trailers.length > 0 ? trailers[0] : null;
+const fetchMovieTrailer = async (id) => {
+  const response = await api.get(`/movie/${id}/videos`);
+  return response.data.results.find(video => video.type === "Trailer" && video.site === "YouTube");
 };
 
-export const useMovieTrailerQuery = (movieId) => {
-    return useQuery({
-        queryKey: ['movieTrailer', movieId],
-        queryFn: fetchMovieTrailer,
-        enabled: !!id, 
-        staleTime: 1000 * 60 * 60,
-    });
+export const useMovieTrailerQuery = (id) => {
+  return useQuery({
+    queryKey: ['movieTrailer', id],
+    queryFn: () => fetchMovieTrailer(id),
+  });
 };
