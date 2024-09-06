@@ -1,52 +1,88 @@
-.pagination {
-    display: flex;
-    justify-content: center;
-    margin-top: 25px; 
-    margin-bottom: 25px;
-  }
-  
-  .page-item {
-    margin: 0 5px;
-  }
-  
-  .page-link {
-    color: rgb(129, 107, 255);
-    background-color: black;
-    border: 1px solid rgb(129, 107, 255); 
-    padding: 8px 12px;
-    border-radius: 4px; 
-  }
-  
-  .page-link:hover {
-    background-color: rgb(129, 107, 255);
-  }
-  
-  .active .page-link {
-    background-color: black; 
-    color: rgb(129, 107, 255); 
+/* MoviePage.style.css */
+
+/* 전체 컨테이너 설정 */
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px; 
+}
+
+/* 필터링 및 정렬 부분 */
+.filters-container {
+  margin-bottom: 20px; 
+}
+
+.filters-container .dropdown {
+  margin-right: 10px;
+}
+
+.filters-container .dropdown-toggle {
+  background-color: rgb(129, 107, 255);
+  border: none;
+  color: white;
+  font-size: 1.2rem; 
+}
+
+.filters-container .dropdown-menu {
+  background-color: rgb(129, 107, 255);
+}
+
+.filters-container .dropdown-item {
+  color: white;
+}
+
+.filters-container .dropdown-item:hover {
+  background-color: rgba(129, 107, 255, 0.8);
+}
+
+/* 영화 카드 부분 */
+.movies-container {
+  margin-top: 20px; 
+}
+
+.movies-container .pagination {
+  display: flex;
+  justify-content: center;
+  margin-top: 25px;
+  margin-bottom: 25px;
+}
+
+.movies-container .page-item {
+  margin: 0 5px;
+}
+
+.movies-container .page-link {
+  color: rgb(129, 107, 255);
+  background-color: black;
+  border: 1px solid rgb(129, 107, 255);
+  padding: 8px 12px;
+  border-radius: 4px;
+}
+
+.movies-container .page-link:hover {
+  background-color: rgb(129, 107, 255);
+}
+
+.movies-container .active .page-link {
+  background-color: black;
+  color: rgb(129, 107, 255);
+}
+
+@media (max-width: 768px) {
+  .movies-container .page-link {
+    padding: 6px 10px;
   }
 
-
-
-  
-  
-  @media (max-width: 768px) {
-    .page-link {
-      padding: 6px 10px; 
-    }
-  
-    .page-item {
-      margin: 0 3px; 
-    }
-  
-    .pagination {
-      flex-wrap: wrap; 
-      font-size: 10px;
-    }
-  
-    .page-link {
-      font-size: 14px; 
-    }
+  .movies-container .page-item {
+    margin: 0 3px;
   }
 
+  .movies-container .pagination {
+    flex-wrap: wrap;
+    font-size: 10px;
+  }
 
+  .movies-container .page-link {
+    font-size: 14px;
+  }
+}

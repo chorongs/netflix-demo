@@ -91,89 +91,90 @@ const MoviePage = () => {
 
   return (
     <Container>
-      <Row>
-        {/* 필터링 및 정렬 부분 */}
-        <Col lg={4} xs={12}>
+      {/* 필터링 및 정렬 부분 */}
+      <div className="filters-container">
+        <Row>
+          <Col lg={4} xs={12}>
+            <Dropdown onSelect={handleSortChange}>
+              <Dropdown.Toggle variant="secondary" id="dropdown-basic">
+                인기 순으로 보기
+              </Dropdown.Toggle>
 
-          <Dropdown onSelect={handleSortChange}>
-            <Dropdown.Toggle variant="secondary" id="dropdown-basic">
-              인기 순으로 보기
-            </Dropdown.Toggle>
+              <Dropdown.Menu>
+                <Dropdown.Item eventKey="desc">평점 높은 순</Dropdown.Item>
+                <Dropdown.Item eventKey="asc">평점 낮은 순</Dropdown.Item>
+              </Dropdown.Menu>
+            </Dropdown>
 
-            <Dropdown.Menu>
-              <Dropdown.Item eventKey="desc">평점 높은 순</Dropdown.Item>
-              <Dropdown.Item eventKey="asc">평점 낮은 순</Dropdown.Item>
-            </Dropdown.Menu>
-          </Dropdown>
+            <Dropdown style={{ marginTop: '20px' }} onSelect={handleGenreSelect}>
+              <Dropdown.Toggle variant="secondary" id="dropdown-basic">
+                장르 별 보기
+              </Dropdown.Toggle>
 
-          <Dropdown style={{ marginTop: '20px' }} onSelect={handleGenreSelect}>
-            <Dropdown.Toggle variant="secondary" id="dropdown-basic">
-              장르 별 보기
-            </Dropdown.Toggle>
+              <Dropdown.Menu>
+                {Object.keys(genreMap).map((genre, index) => (
+                  <Dropdown.Item key={index} eventKey={genre}>
+                    {genre}
+                  </Dropdown.Item>
+                ))}
+              </Dropdown.Menu>
+            </Dropdown>
+          </Col>
+        </Row>
+      </div>
 
-            <Dropdown.Menu>
-              {Object.keys(genreMap).map((genre, index) => (
-                <Dropdown.Item key={index} eventKey={genre}>
-                  {genre}
-                </Dropdown.Item>
-              ))}
-            </Dropdown.Menu>
-          </Dropdown>
-        </Col>
+      {/* 영화 카드 부분 */}
+      <div className="movies-container">
+        <Row>
+          {totalMovies === 0 ? (
+            <div className="alert-container">
+              <Alert
+                variant="info"
+                style={{
+                  backgroundColor: 'rgb(129, 107, 255)',
+                  color: 'white',
+                  border: 'none',
+                  width: '80%',
+                  fontSize: '1.3rem',
+                  textAlign: 'center',
+                  marginTop: '100px',
+                }}
+              >
+                검색 결과가 없습니다.
+              </Alert>
+            </div>
+          ) : (
+            sortedAndFilteredMovies.slice(0, 16).map((movie, index) => (
+              <Col key={index} lg={4} md={4} xs={6}>
+                <MovieCard movie={movie} />
+              </Col>
+            ))
+          )}
+        </Row>
 
-        {/* 영화 카드 부분 */}
-        <Col lg={8} xs={12}>
-          <Row>
-            {totalMovies === 0 ? (
-              <div className="alert-container">
-                <Alert
-                  variant="info"
-                  style={{
-                    backgroundColor: 'rgb(129, 107, 255)',
-                    color: 'white',
-                    border: 'none',
-                    width: '80%',
-                    fontSize: '1.3rem',
-                    textAlign: 'center',
-                    marginTop: '100px',
-                  }}
-                >
-                  검색 결과가 없습니다.
-                </Alert>
-              </div>
-            ) : (
-              sortedAndFilteredMovies.slice(0, 16).map((movie, index) => (
-                <Col key={index} lg={4} md={4} xs={6}>
-                  <MovieCard movie={movie} />
-                </Col>
-              ))
-            )}
-          </Row>
-
-          {/* 페이지네이션 */}
-          <ReactPaginate
-            nextLabel="next >"
-            onPageChange={handlePageClick}
-            pageRangeDisplayed={3}
-            marginPagesDisplayed={2}
-            pageCount={totalPages}
-            previousLabel="< previous"
-            pageClassName="page-item"
-            pageLinkClassName="page-link"
-            previousClassName="page-item"
-            previousLinkClassName="page-link"
-            nextClassName="page-item"
-            nextLinkClassName="page-link"
-            breakLabel="..."
-            breakClassName="page-item"
-            breakLinkClassName="page-link"
-            containerClassName="pagination"
-            activeClassName="active"
-            renderOnZeroPageCount={null}
-            forcePage={page - 1}
-          />
-        </Col>
-      </Row>
+        {/* 페이지네이션 */}
+        <ReactPaginate
+          nextLabel="next >"
+          onPageChange={handlePageClick}
+          pageRangeDisplayed={3}
+          marginPagesDisplayed={2}
+          pageCount={totalPages}
+          previousLabel="< previous"
+          pageClassName="page-item"
+          pageLinkClassName="page-link"
+          previousClassName="page-item"
+          previousLinkClassName="page-link"
+          nextClassName="page-item"
+          nextLinkClassName="page-link"
+          breakLabel="..."
+          breakClassName="page-item"
+          breakLinkClassName="page-link"
+          containerClassName="pagination"
+          activeClassName="active"
+          renderOnZeroPageCount={null}
+          forcePage={page - 1}
+        />
+      </div>
     </Container>
   );
 };
