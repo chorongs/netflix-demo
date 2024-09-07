@@ -1,10 +1,20 @@
 .similar-movie-grid {
-    display: flex;
-    gap: 16px; /* 카드 사이의 간격 */
-    justify-content: space-between; /* 가로로 균등하게 배치 */
+  display: flex;
+  gap: 16px;
+  justify-content: space-between;
+}
+
+.similar-movie-grid .movie-card {
+  flex: 1;
+}
+
+@media (max-width: 767px) {
+  .similar-movie-grid {
+    justify-content: space-around;
   }
-  
+
   .similar-movie-grid .movie-card {
-    flex: 1; /* 카드가 균등하게 공간을 차지하도록 설정 */
+    flex: 0 1 calc(25% - 12px); 
+    max-width: calc(25% - 12px); 
   }
-  
+}
