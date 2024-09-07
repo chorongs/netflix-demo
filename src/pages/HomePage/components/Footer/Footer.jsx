@@ -5,7 +5,7 @@ const Footer = () => {
   return (
     <div className="footer">
       <div className="footer-content">
-        <span>궁금한 영화를 한 곳에서 확인해보세요!</span> 
+
 
       </div>
       <div className="footer-address">

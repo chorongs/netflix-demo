@@ -13,11 +13,12 @@ const RecommandMovieSlide = () => {
 
   const handleResize = () => {
     const screenWidth = window.innerWidth;
-    if (screenWidth <= 767) {
-      setVisibleMovies(2); 
-    } 
-     else if (screenWidth <= 1200) {
+    if (screenWidth <= 600) {
+      setVisibleMovies(4); 
+    } else if (screenWidth <= 700) {
       setVisibleMovies(6); 
+    } else if (screenWidth <= 1200) {
+      setVisibleMovies(8); 
     } else {
       setVisibleMovies(10); 
     }

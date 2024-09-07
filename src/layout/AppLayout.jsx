@@ -67,7 +67,7 @@ const AppLayout = () => {
     <Outlet />
     {/*  // 리액트에 새로나운 기술인데 router내부 자손을 가져올 수 있도록 도와준다. */}
 
-    {/* <Footer /> */}
+    <Footer />
     </div>
 
 
