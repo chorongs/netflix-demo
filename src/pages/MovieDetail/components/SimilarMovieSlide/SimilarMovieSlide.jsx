@@ -14,7 +14,7 @@ const SimilarMovieSlide = () => {
   const handleResize = () => {
     const screenWidth = window.innerWidth;
     if (screenWidth <= 767) {
-      setVisibleMovies(6); 
+      setVisibleMovies(4); 
     } 
      else if (screenWidth <= 1200) {
       setVisibleMovies(6); 
