@@ -10,7 +10,7 @@ import { useParams } from 'react-router-dom';
 const responsive = {
     desktop: {
       breakpoint: { max: 3000, min: 1024 },
-      items: 8,
+      items: 5,
 
     },
     tablet: {
@@ -43,8 +43,8 @@ const SimilarMovieSlide = () => {
 
 
     <Carousel
-    infinite={true}
-    centerMode={true}
+    infinite={false}
+    centerMode={false}
     itemClass='movie-slider p-1'
     containerClass='carousel-container'
     responsive={responsive}
