@@ -9,7 +9,7 @@ import MovieCard from '../MovieCard/MovieCard';
 const responsive = {
     desktop: {
       breakpoint: { max: 3000, min: 1024 },
-      items: 8,
+      items: 6,
 
     },
     tablet: {
@@ -43,7 +43,7 @@ const PopularMovieSlide = () => {
 
   <Carousel
     infinite={true}
-    centerMode={true}
+    centerMode={false}
     itemClass='movie-slider p-1'
     containerClass='carousel-container'
     responsive={responsive}
