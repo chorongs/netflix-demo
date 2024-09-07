@@ -1,0 +1,30 @@
+.similar-movie-grid {
+  display: grid;
+  gap: 16px;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); /* 기본 설정 */
+  justify-content: space-between;
+}
+
+.title {
+  font-weight: bolder;
+  margin-bottom: 15px;
+}
+
+/* 화면 크기에 따른 열 수 조정 */
+@media (max-width: 1200px) {
+  .similar-movie-grid {
+    grid-template-columns: repeat(3, 1fr); /* 1200px 이하에서 3열 */
+  }
+}
+
+@media (max-width: 700px) {
+  .similar-movie-grid {
+    grid-template-columns: repeat(2, 1fr); /* 700px 이하에서 2열 */
+  }
+}
+
+@media (max-width: 600px) {
+  .similar-movie-grid {
+    grid-template-columns: repeat(2, 1fr); /* 600px 이하에서도 2열 유지 */
+  }
+}
