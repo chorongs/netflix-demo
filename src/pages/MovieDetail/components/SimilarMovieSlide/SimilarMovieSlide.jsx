@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { Alert } from 'bootstrap';
-import './RecommandMovieSlide.style.css';
-import useRecommandMovieQuery from '../../../../hooks/useRecommandMovie';
 import MovieCard from '../../../HomePage/components/MovieCard/MovieCard';
+import './SimilarMovieSlide.style.css';
+import useSimilarMovieQuery from '../../../../hooks/useSimilarMovie';
 import { useParams } from 'react-router-dom';
 
-const RecommandMovieSlide = () => {
+const SimilarMovieSlide = () => {
   const { id } = useParams();
-  const { data, isLoading, isError, error } = useRecommandMovieQuery(id);
+  const { data, isLoading, isError, error } = useSimilarMovieQuery(id);
 
   const [visibleMovies, setVisibleMovies] = useState(5);
 
@@ -41,8 +41,8 @@ const RecommandMovieSlide = () => {
 
   return (
     <div>
-      <h2 className='title'>추천하는 영화</h2>
-      <div className="recommand-movie-grid">
+      <h2 className='title'> 비슷한 영화를 보고 싶다면 </h2>
+      <div className="similar-movie-grid">
         {data.results.slice(0, visibleMovies).map((movie, index) => (
           <MovieCard movie={movie} key={index} />
         ))}
@@ -51,4 +51,4 @@ const RecommandMovieSlide = () => {
   );
 };
 
-export default RecommandMovieSlide;
+export default SimilarMovieSlide;
