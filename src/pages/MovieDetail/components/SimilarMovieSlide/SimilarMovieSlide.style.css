@@ -18,3 +18,38 @@
     max-width: calc(25% - 12px); 
   }
 }
+
+
+@media (max-width: 1200px) {
+  .similar-movie-grid {
+    justify-content: space-around;
+  }
+
+  .similar-movie-grid .movie-card {
+    flex: 0 1 calc(33.33% - 12px); 
+    max-width: calc(33.33% - 12px); 
+  }
+}
+
+
+@media (max-width: 700px) {
+  .similar-movie-grid {
+    justify-content: space-around;
+  }
+
+  .similar-movie-grid .movie-card {
+    flex: 0 1 calc(50% - 12px); 
+    max-width: calc(50% - 12px); 
+  }
+}
+
+@media (max-width: 767px) {
+  .similar-movie-grid {
+    justify-content: space-around;
+  }
+
+  .similar-movie-grid .movie-card {
+    flex: 0 1 calc(25% - 12px); 
+    max-width: calc(25% - 12px); 
+  }
+}

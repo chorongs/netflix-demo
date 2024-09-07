@@ -14,9 +14,12 @@ const SimilarMovieSlide = () => {
   const handleResize = () => {
     const screenWidth = window.innerWidth;
     if (screenWidth <= 767) {
-      setVisibleMovies(4); // 모바일에서는 4개만 표시
+      setVisibleMovies(4); 
+    } 
+     else if (screenWidth <= 1200) {
+      setVisibleMovies(4); 
     } else {
-      setVisibleMovies(5); // 기본 5개 표시
+      setVisibleMovies(5); 
     }
   };
 
