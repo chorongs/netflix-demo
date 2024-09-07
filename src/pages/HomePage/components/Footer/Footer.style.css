@@ -1,14 +1,15 @@
 .footer {
     background-color: rgb(129, 107, 255); /* 배경색 */
     color: #fff; /* 글자색 */
-    padding: 40px;
     text-align: center;
+    margin-top: 5px;
+    
   }
   
   .footer-content,
   .footer-address,
   .footer-copy {
-    margin: 5px 0;
+    margin-top: 5px;
   }
   
   .footer-content {

@@ -3,7 +3,6 @@ import Banner from './components/Banner/Banner'
 import PopularMovieSlide from './components/PopularMovieSlide/PopularMovieSlide'
 import TopRatedMovieSlide from './components/TopRatedMovieSlide/TopRatedMovieSlide'
 import UpcomingMovieSlide from './components/UpcomingMovieSlide/UpcomingMovieSlide'
-import SimilarMovieSlide from '../MovieDetail/components/SimilarMovieSlide/SimilarMovieSlide'
 
 
 // 1. 배너 => 인기 영화가 나오게.

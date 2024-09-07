@@ -1,54 +1,18 @@
 .recommand-movie-grid {
-  display: flex;
+  display: grid;
   gap: 16px;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* 최소 너비 200px, 나머지 공간을 균등하게 나누기 */
   justify-content: space-between;
-}
-
-.recommand-movie-grid .movie-card {
-  flex: 1;
 }
 
 @media (max-width: 767px) {
   .recommand-movie-grid {
-    justify-content: space-around;
-  }
-
-  .recommand-movie-grid .movie-card {
-    flex: 0 1 calc(25% - 12px); 
-    max-width: calc(25% - 12px); 
+    grid-template-columns: repeat(2, 1fr); /* 모바일에서 두 개의 카드가 한 줄에 배치됨 */
   }
 }
 
 @media (max-width: 1200px) {
   .recommand-movie-grid {
-    justify-content: space-around;
-  }
-
-  .recommand-movie-grid .movie-card {
-    flex: 0 1 calc(33.33% - 12px); 
-    max-width: calc(33.33% - 12px); 
-  }
-}
-
-
-@media (max-width: 700px) {
-  .recommand-movie-grid {
-    justify-content: space-around;
-  }
-
-  .similar-movie-grid .movie-card {
-    flex: 0 1 calc(50% - 12px); 
-    max-width: calc(50% - 12px); 
-  }
-}
-
-@media (max-width: 767px) {
-  .recommand-movie-grid {
-    justify-content: space-around;
-  }
-
-  .recommand-movie-grid .movie-card {
-    flex: 0 1 calc(25% - 12px); 
-    max-width: calc(25% - 12px); 
+    grid-template-columns: repeat(3, 1fr); /* 화면 폭이 1200px 이하일 때, 세 개의 카드가 한 줄에 배치됨 */
   }
 }
